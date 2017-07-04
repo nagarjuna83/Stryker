@@ -1,11 +1,30 @@
 {
-  "luis_schema_version": "1.3.0",
+  "luis_schema_version": "2.1.0",
+  "versionId": "0.1",
   "name": "LuisBot",
   "desc": "",
   "culture": "en-us",
   "intents": [
     {
+      "name": "Acknowledgement"
+    },
+    {
+      "name": "DontHaveErrorMessage"
+    },
+    {
+      "name": "HaveErrorMessage"
+    },
+    {
+      "name": "Help"
+    },
+    {
+      "name": "IssueNotify"
+    },
+    {
       "name": "None"
+    },
+    {
+      "name": "Priority"
     },
     {
       "name": "SearchHotels"
@@ -14,15 +33,30 @@
       "name": "ShowHotelsReviews"
     },
     {
-      "name": "Help"
+      "name": "Urgency"
+    },
+    {
+      "name": "Welcome"
     }
   ],
   "entities": [
     {
+      "name": "AirportCode"
+    },
+    {
       "name": "Hotel"
     },
     {
-      "name": "AirportCode"
+      "name": "IssuePriority"
+    },
+    {
+      "name": "IssueType"
+    },
+    {
+      "name": "SystemName"
+    },
+    {
+      "name": "UrgencyType"
     }
   ],
   "composites": [],
@@ -54,12 +88,137 @@
   ],
   "utterances": [
     {
-      "text": "look for hotels in miami",
-      "intent": "SearchHotels",
+      "text": "hello",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "hi",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "i don't",
+      "intent": "DontHaveErrorMessage",
+      "entities": []
+    },
+    {
+      "text": "hey",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "yes",
+      "intent": "HaveErrorMessage",
+      "entities": []
+    },
+    {
+      "text": "i need help",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "no",
+      "intent": "DontHaveErrorMessage",
+      "entities": []
+    },
+    {
+      "text": "help me",
+      "intent": "Help",
       "entities": []
     },
     {
       "text": "search for hotels in seattle",
+      "intent": "SearchHotels",
+      "entities": []
+    },
+    {
+      "text": "i have",
+      "intent": "HaveErrorMessage",
+      "entities": []
+    },
+    {
+      "text": "what can i do?",
+      "intent": "Help",
+      "entities": []
+    },
+    {
+      "text": "high",
+      "intent": "Urgency",
+      "entities": [
+        {
+          "entity": "UrgencyType",
+          "startPos": 0,
+          "endPos": 3
+        }
+      ]
+    },
+    {
+      "text": "i do",
+      "intent": "HaveErrorMessage",
+      "entities": []
+    },
+    {
+      "text": "i do not",
+      "intent": "DontHaveErrorMessage",
+      "entities": []
+    },
+    {
+      "text": "whatsup",
+      "intent": "Welcome",
+      "entities": []
+    },
+    {
+      "text": "yes i have",
+      "intent": "HaveErrorMessage",
+      "entities": []
+    },
+    {
+      "text": "medium",
+      "intent": "Urgency",
+      "entities": [
+        {
+          "entity": "UrgencyType",
+          "startPos": 0,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "low",
+      "intent": "Urgency",
+      "entities": [
+        {
+          "entity": "UrgencyType",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "p1",
+      "intent": "Priority",
+      "entities": [
+        {
+          "entity": "IssuePriority",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "p2",
+      "intent": "Priority",
+      "entities": [
+        {
+          "entity": "IssuePriority",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "look for hotels in miami",
       "intent": "SearchHotels",
       "entities": []
     },
@@ -74,8 +233,8 @@
       "entities": [
         {
           "entity": "Hotel",
-          "startPos": 5,
-          "endPos": 8
+          "startPos": 23,
+          "endPos": 44
         }
       ]
     },
@@ -85,8 +244,8 @@
       "entities": [
         {
           "entity": "Hotel",
-          "startPos": 6,
-          "endPos": 8
+          "startPos": 25,
+          "endPos": 42
         }
       ]
     },
@@ -96,8 +255,8 @@
       "entities": [
         {
           "entity": "Hotel",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 16,
+          "endPos": 23
         }
       ]
     },
@@ -107,28 +266,13 @@
       "entities": [
         {
           "entity": "Hotel",
-          "startPos": 4,
-          "endPos": 6
+          "startPos": 19,
+          "endPos": 35
         }
       ]
     },
     {
-      "text": "what can i do?",
-      "intent": "Help",
-      "entities": []
-    },
-    {
-      "text": "help me",
-      "intent": "Help",
-      "entities": []
-    },
-    {
       "text": "what are the available options?",
-      "intent": "Help",
-      "entities": []
-    },
-    {
-      "text": "i need help",
       "intent": "Help",
       "entities": []
     },
@@ -153,8 +297,8 @@
       "entities": [
         {
           "entity": "Hotel",
-          "startPos": 7,
-          "endPos": 11
+          "startPos": 31,
+          "endPos": 56
         }
       ]
     },
@@ -164,8 +308,8 @@
       "entities": [
         {
           "entity": "Hotel",
-          "startPos": 5,
-          "endPos": 8
+          "startPos": 24,
+          "endPos": 46
         }
       ]
     },
@@ -175,8 +319,8 @@
       "entities": [
         {
           "entity": "AirportCode",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 17,
+          "endPos": 19
         }
       ]
     },
@@ -186,8 +330,8 @@
       "entities": [
         {
           "entity": "AirportCode",
-          "startPos": 5,
-          "endPos": 5
+          "startPos": 22,
+          "endPos": 24
         }
       ]
     },
@@ -197,8 +341,8 @@
       "entities": [
         {
           "entity": "AirportCode",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 17,
+          "endPos": 19
         }
       ]
     },
@@ -208,8 +352,8 @@
       "entities": [
         {
           "entity": "AirportCode",
-          "startPos": 3,
-          "endPos": 3
+          "startPos": 17,
+          "endPos": 19
         }
       ]
     },
@@ -219,7 +363,237 @@
       "entities": [
         {
           "entity": "AirportCode",
-          "startPos": 3,
+          "startPos": 19,
+          "endPos": 21
+        }
+      ]
+    },
+    {
+      "text": "p3",
+      "intent": "Priority",
+      "entities": [
+        {
+          "entity": "IssuePriority",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "p4",
+      "intent": "Priority",
+      "entities": [
+        {
+          "entity": "IssuePriority",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "p5",
+      "intent": "Priority",
+      "entities": [
+        {
+          "entity": "IssuePriority",
+          "startPos": 0,
+          "endPos": 1
+        }
+      ]
+    },
+    {
+      "text": "no i don't have",
+      "intent": "DontHaveErrorMessage",
+      "entities": []
+    },
+    {
+      "text": "want to create an acknowledgement",
+      "intent": "Acknowledgement",
+      "entities": []
+    },
+    {
+      "text": "i want to create an acknowledgement",
+      "intent": "Acknowledgement",
+      "entities": []
+    },
+    {
+      "text": "l1 acknowledgement",
+      "intent": "Acknowledgement",
+      "entities": []
+    },
+    {
+      "text": "create ack",
+      "intent": "Acknowledgement",
+      "entities": []
+    },
+    {
+      "text": "set and acknowledgement",
+      "intent": "Acknowledgement",
+      "entities": []
+    },
+    {
+      "text": "create an acknowledgement",
+      "intent": "Acknowledgement",
+      "entities": []
+    },
+    {
+      "text": "facing issue with lims order placing",
+      "intent": "IssueNotify",
+      "entities": [
+        {
+          "entity": "SystemName",
+          "startPos": 18,
+          "endPos": 21
+        },
+        {
+          "entity": "IssueType",
+          "startPos": 29,
+          "endPos": 35
+        }
+      ]
+    },
+    {
+      "text": "i'm facing issue with fims order printing.",
+      "intent": "IssueNotify",
+      "entities": [
+        {
+          "entity": "SystemName",
+          "startPos": 22,
+          "endPos": 25
+        },
+        {
+          "entity": "IssueType",
+          "startPos": 33,
+          "endPos": 40
+        }
+      ]
+    },
+    {
+      "text": "i have an issue with fims order processing.",
+      "intent": "IssueNotify",
+      "entities": [
+        {
+          "entity": "SystemName",
+          "startPos": 21,
+          "endPos": 24
+        },
+        {
+          "entity": "IssueType",
+          "startPos": 32,
+          "endPos": 41
+        }
+      ]
+    },
+    {
+      "text": "i'm having trouble with fims order processing.",
+      "intent": "IssueNotify",
+      "entities": [
+        {
+          "entity": "SystemName",
+          "startPos": 24,
+          "endPos": 27
+        },
+        {
+          "entity": "IssueType",
+          "startPos": 35,
+          "endPos": 44
+        }
+      ]
+    },
+    {
+      "text": "trouble with fims order printing.",
+      "intent": "IssueNotify",
+      "entities": [
+        {
+          "entity": "SystemName",
+          "startPos": 13,
+          "endPos": 16
+        },
+        {
+          "entity": "IssueType",
+          "startPos": 24,
+          "endPos": 31
+        }
+      ]
+    },
+    {
+      "text": "issue with fims order printing",
+      "intent": "IssueNotify",
+      "entities": [
+        {
+          "entity": "SystemName",
+          "startPos": 11,
+          "endPos": 14
+        },
+        {
+          "entity": "IssueType",
+          "startPos": 22,
+          "endPos": 29
+        }
+      ]
+    },
+    {
+      "text": "priority of the issue is p1",
+      "intent": "Priority",
+      "entities": [
+        {
+          "entity": "IssuePriority",
+          "startPos": 25,
+          "endPos": 26
+        }
+      ]
+    },
+    {
+      "text": "priority is p2",
+      "intent": "Priority",
+      "entities": [
+        {
+          "entity": "IssuePriority",
+          "startPos": 12,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "priority is p1",
+      "intent": "Priority",
+      "entities": [
+        {
+          "entity": "IssuePriority",
+          "startPos": 12,
+          "endPos": 13
+        }
+      ]
+    },
+    {
+      "text": "low impact",
+      "intent": "Urgency",
+      "entities": [
+        {
+          "entity": "UrgencyType",
+          "startPos": 0,
+          "endPos": 2
+        }
+      ]
+    },
+    {
+      "text": "medium impact",
+      "intent": "Urgency",
+      "entities": [
+        {
+          "entity": "UrgencyType",
+          "startPos": 0,
+          "endPos": 5
+        }
+      ]
+    },
+    {
+      "text": "high impact",
+      "intent": "Urgency",
+      "entities": [
+        {
+          "entity": "UrgencyType",
+          "startPos": 0,
           "endPos": 3
         }
       ]
