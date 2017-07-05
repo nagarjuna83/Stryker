@@ -21,7 +21,7 @@ namespace LuisBot.Services
                     @"https://westus.api.cognitive.microsoft.com/",
                     @"qnamaker/v1.0/",
                     @"knowledgebases/",
-                    "7a361945-bd06-4e9b-a13e-ebe73759c18b",
+                    "56145925-270b-4f0a-8338-156f9cdd2c78",
                     @"/generateAnswer");
                 var httpContent =
                     new StringContent($"{{\"question\": \"{Query}\"}}",

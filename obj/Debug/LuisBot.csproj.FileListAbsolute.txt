@@ -183,7 +183,6 @@ D:\Projects\Chatbot\Stryker-Naga\bin\ko\System.Spatial.resources.dll
 D:\Projects\Chatbot\Stryker-Naga\bin\ru\System.Spatial.resources.dll
 D:\Projects\Chatbot\Stryker-Naga\bin\zh-Hans\System.Spatial.resources.dll
 D:\Projects\Chatbot\Stryker-Naga\bin\zh-Hant\System.Spatial.resources.dll
-D:\Projects\Chatbot\Stryker-Naga\obj\Debug\LuisBot.csprojResolveAssemblyReference.cache
 D:\Projects\Chatbot\Stryker-Naga\obj\Debug\LuisBot.dll
 D:\Projects\Chatbot\Stryker-Naga\obj\Debug\LuisBot.pdb
 D:\Stryker\intelligence-LUIS\bin\Microsoft.Azure.Documents.ServiceInterop.dll
@@ -254,3 +253,4 @@ D:\Stryker\intelligence-LUIS\bin\ko\System.Spatial.resources.dll
 D:\Stryker\intelligence-LUIS\bin\ru\System.Spatial.resources.dll
 D:\Stryker\intelligence-LUIS\bin\zh-Hans\System.Spatial.resources.dll
 D:\Stryker\intelligence-LUIS\bin\zh-Hant\System.Spatial.resources.dll
+D:\Projects\Chatbot\Stryker-Naga\obj\Debug\LuisBot.csprojResolveAssemblyReference.cache

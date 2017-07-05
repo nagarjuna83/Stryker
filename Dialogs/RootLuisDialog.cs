@@ -35,8 +35,7 @@
         {
             var name = context.Activity.From.Name;
             await context.PostAsync("Hi " + name + ".");
-            await context.PostAsync("Welcome to Stryker supports.");
-            await context.PostAsync("How can I help you today?");
+            await context.PostAsync("Welcome to Stryker support.How can I help you today?");
             context.Wait(this.MessageReceived);
         }
 
@@ -218,8 +217,8 @@
         [LuisIntent("Help")]
         public async Task Help(IDialogContext context, LuisResult result)
         {
-            await context.PostAsync("I can help you with logging issue in Stryker.");
-            await context.PostAsync("start by saying Hi.");
+            await context.PostAsync("I can help you with logging issue with Stryker support team.");
+            await context.PostAsync("What is the priority of the issue (P1 to P5)?");
 
             context.Wait(this.MessageReceived);
         }
