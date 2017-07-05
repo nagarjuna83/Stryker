@@ -38,7 +38,7 @@
                         Trace.TraceError(ex.ToString());
                     }
                 }
-
+                //await Conversation.SendAsync(activity, () => new QnAMaker());
                 await Conversation.SendAsync(activity, () => new RootLuisDialog());
             }
             else
