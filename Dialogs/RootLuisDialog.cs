@@ -80,14 +80,15 @@
             context.ConversationData.SetValue<string>(StrickerConstants.ErrorMessage, message.Text);
             var qnaService = new QnAService();
             var query = await qnaService.QueryQnABot(message.Text);
-            if (query.Answer != "No Match Found")
+            if (query.Score == 0)
             {
-                await context.PostAsync(query.Answer);
-                await context.PostAsync("Let me know if I can help you with anything else.");
+                await context.PostAsync("What is the priority of the issue (P1 to P5)?");
             }
             else
             {
-                await context.PostAsync("What is the priority of the issue (P1 to P5)?");
+
+                await context.PostAsync(query.Answer);
+                await context.PostAsync("Let me know if I can help you with anything else.");
             }
             context.Wait(this.MessageReceived);
         }
