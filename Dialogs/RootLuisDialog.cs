@@ -132,15 +132,30 @@
 
         public void SendDetails(IDialogContext context)
         {
+            string systemName= string.Empty;
+            context.ConversationData.TryGetValue<string>(StrickerConstants.SystemName, out systemName);
+            string IssueType = string.Empty;
+            context.ConversationData.TryGetValue<string>(StrickerConstants.IssueType, out IssueType);
+            string HaveErrorMessage = string.Empty;
+            context.ConversationData.TryGetValue<string>(StrickerConstants.HaveErrorMessage, out HaveErrorMessage);
+            string ErrorMessage = string.Empty;
+            context.ConversationData.TryGetValue<string>(StrickerConstants.ErrorMessage, out ErrorMessage);
+            string Priority = string.Empty;
+            context.ConversationData.TryGetValue<string>(StrickerConstants.Priority, out Priority);
+            string Urgency = string.Empty;
+            context.ConversationData.TryGetValue<string>(StrickerConstants.Urgency, out Urgency);
+
             var Issue = new Issue
             {
-                SystemName = context.ConversationData.GetValue<string>(StrickerConstants.SystemName),
-                IssueType = context.ConversationData.GetValue<string>(StrickerConstants.IssueType),
-                HaveErrorMessage = context.ConversationData.GetValue<string>(StrickerConstants.HaveErrorMessage),
-                ErrorMessage = context.ConversationData.GetValue<string>(StrickerConstants.ErrorMessage),
-                Priority = context.ConversationData.GetValue<string>(StrickerConstants.Priority),
-                Urgency = context.ConversationData.GetValue<string>(StrickerConstants.Urgency),
+                SystemName = systemName,
+                IssueType = IssueType,
+                HaveErrorMessage = HaveErrorMessage,
+                ErrorMessage = ErrorMessage,
+                Priority = Priority,
+                Urgency = Urgency
             };
+
+
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.UseDefaultCredentials = false;
             smtpClient.Credentials = new System.Net.NetworkCredential("ganeshanthati@gmail.com", "oejlyekdforlpmoj");
