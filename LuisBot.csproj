@@ -162,6 +162,8 @@
     <Compile Include="Services\BingSpellCheckResponse.cs" />
     <Compile Include="Services\BingSpellCheckService.cs" />
     <Compile Include="Services\BingSpellCheckSuggestion.cs" />
+    <Compile Include="Services\QnAQuery.cs" />
+    <Compile Include="Services\QnAService.cs" />
     <Compile Include="StrickerConstants.cs" />
   </ItemGroup>
   <ItemGroup>

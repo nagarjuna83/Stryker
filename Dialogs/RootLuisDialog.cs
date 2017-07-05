@@ -11,6 +11,8 @@
     using Microsoft.Bot.Builder.Luis.Models;
     using Microsoft.Bot.Connector;
     using System.Net.Mail;
+    using System.Threading;
+    using LuisBot.Services;
 
     [LuisModel("04808423-d5b5-45fe-87bf-4946b38c14bc", "9f69440c3add42219149bc256245118d")]
     [Serializable]
@@ -76,8 +78,23 @@
         {
             var message = await result;
             context.ConversationData.SetValue<string>(StrickerConstants.ErrorMessage, message.Text);
+            var qnaService = new QnAService();
+            var query = await qnaService.QueryQnABot(message.Text);
+            if (query.Answer != "No Match Found")
+            {
+                await context.PostAsync(query.Answer);
+                await context.PostAsync("Let me know if I can help you with anything else.");
+            }
+            else
+            {
+                await context.PostAsync("What is the priority of the issue (P1 to P5)?");
+            }
+            context.Wait(this.MessageReceived);
+        }
 
-            await context.PostAsync("What is the priority of the issue (P1 to P5)?");
+        private async Task ResumeAfterQnA(IDialogContext context, IAwaitable<IMessageActivity> result)
+        {
+            var message = await result;
             context.Wait(this.MessageReceived);
         }
 
